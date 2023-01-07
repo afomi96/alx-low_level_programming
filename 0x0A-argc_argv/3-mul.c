@@ -11,8 +11,9 @@
 int main(int argc, char *argv[])
 {
 	int index, multiplication;
+
 	multiplication = 1;
-	
+
 	if (argc < 3)
 	{
 		printf("Error\n");

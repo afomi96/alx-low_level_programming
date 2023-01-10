@@ -4,16 +4,20 @@
 #include <limits.h>
 
 /**
- *malloc_checked - allocate memory with malloc
- * @b: unsigned int type
- * Return: return pointer
+ * create_array - creates an array of chars, and initializes it w/ a char
+ * @size: input size of array
+ * @c: initializing char
+ * Return: pointer to the array or NULL if it fails
  */
-void *malloc_checked(unsigned int b)
+char *create_array(unsigned int size, char c)
 {
-	int *ptr;
+	char *pstr;
+	unsigned int i;
 
-	ptr = malloc(b);
-	if (ptr == NULL)
-		exit(98);
-	return (ptr);
+	pstr = malloc(sizeof(char) * size);
+
+	for (i = 0; i < size; i++)
+		pstr[i] = c;
+	pstr[i] = 0;
+	return (size < 1 ? 0 : pstr);
 }
